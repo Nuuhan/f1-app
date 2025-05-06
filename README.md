@@ -65,9 +65,11 @@ The frontend uses the following main dependencies:
 1. Make sure you're in the root directory
 2. Start the FastAPI server:
 ```bash
+
 uvicorn main:app --reload
 or
 python -m uvicorn f1-app.src.services.race_visualizer:app --reload
+
 ```
 
 ### Frontend
@@ -78,7 +80,9 @@ cd f1-app
 
 2. Start the development server:
 ```bash
+
 npm start
+
 ```
 
 The frontend will be available at `http://localhost:3000`
