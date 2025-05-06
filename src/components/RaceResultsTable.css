@@ -1,0 +1,242 @@
+.results-table-container {
+  margin: 20px;
+  overflow-x: auto;
+  transform: scale(0.9);
+  transform-origin: top center;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: var(--bg-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.results-table th,
+.results-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--text-color);
+  border-right: 1px solid var(--text-color);
+  transition: all 0.3s ease;
+  position: relative;
+  color: var(--text-color);
+}
+
+.results-table th:last-child,
+.results-table td:last-child {
+  border-right: none;
+}
+
+.results-table th {
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.results-table tr:hover {
+  background-color: var(--main-bg);
+}
+
+.results-table tr:hover td {
+  background-color: var(--main-bg);
+}
+
+.results-table tr:nth-child(even) {
+  background-color: var(--main-bg);
+}
+
+/* Style for DNF entries */
+.results-table td:contains("DNF") {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+/* Style for position gained/lost */
+.results-table td[data-position-change] {
+  text-align: center;
+  position: relative;
+  padding-left: 30px;
+}
+
+.results-table td[data-position-change="gain"] {
+  color: #27ae60;
+}
+
+.results-table td[data-position-change="loss"] {
+  color: #2c3e50;
+}
+
+.results-table td[data-position-change="gain"]::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #27ae60;
+  border-radius: 2px;
+}
+
+.results-table td[data-position-change="loss"]::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #2c3e50;
+  border-radius: 2px;
+}
+
+.results-table td[data-position-change="same"]::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #95a5a6;
+  border-radius: 2px;
+}
+
+/* Add hover effect for table cells */
+.results-table td:hover {
+  background-color: rgba(44, 62, 80, 0.1);
+  cursor: pointer;
+}
+
+/* Add transition for smooth hover effects */
+.results-table td {
+  transition: background-color 0.2s ease;
+}
+
+/* Add subtle shadow to the table */
+.results-table {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the first column (Driver names) */
+.results-table td:first-child {
+  font-weight: 500;
+}
+
+/* Style for the second column (Team names) */
+.results-table td:nth-child(2) {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Style for the third column (Race Position) */
+.results-table td:nth-child(3) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Style for the fourth column (Winning Delta) */
+.results-table td:nth-child(4) {
+  font-family: monospace;
+  text-align: right;
+}
+
+/* Style for the fifth column (Points Awarded) */
+.results-table td:nth-child(5) {
+  font-weight: bold;
+  text-align: center;
+}
+
+.race-results-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.race-results-container h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.table-container {
+  overflow-x: auto;
+  background: var(--bg-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.race-results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background-color: var(--bg-color);
+}
+
+.race-results-table th,
+.race-results-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--text-color);
+  color: var(--text-color);
+}
+
+.race-results-table th {
+  background-color: var(--sidebar-bg);
+  font-weight: 600;
+  color: var(--sidebar-text);
+}
+
+.race-results-table tr:hover {
+  background-color: var(--main-bg);
+}
+
+.race-results-table td:nth-child(1) {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.race-results-table td:nth-child(4) {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* DNF and DSQ styling */
+.dnf-row {
+  background-color: var(--main-bg);
+}
+
+.dnf-row td:first-child {
+  color: var(--text-color);
+}
+
+/* Loading and error states */
+.loading,
+.error {
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.error {
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .race-results-table {
+    font-size: 12px;
+  }
+  
+  .race-results-table th,
+  .race-results-table td {
+    padding: 8px;
+  }
+} 

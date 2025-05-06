@@ -7,8 +7,6 @@ import NewsPage from './pages/NewsPage';
 import TeamMaker from './pages/TeamMaker';
 import ThemeToggle from './components/ThemeToggle';
 import Profile from './pages/Profile';
-import RaceVisualizer from './pages/RaceVisualizer';
-import Predictions from './pages/Predictions';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -64,9 +62,9 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/season-stats" element={<SeasonStats />} />
             <Route path="/news" element={<NewsPage />} />
-            <Route path="/predictions" element={<Predictions />} />
+            <Route path="/predictions" element={<div className="placeholder-page">Our Predictions Page Coming Soon</div>} />
             <Route path="/team-maker" element={<TeamMaker />} />
-            <Route path="/visualisers" element={<RaceVisualizer />} />
+            <Route path="/visualisers" element={<div className="placeholder-page">Visualisers Page Coming Soon</div>} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </main>

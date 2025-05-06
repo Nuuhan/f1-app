@@ -1,0 +1,205 @@
+.driver-standings-container {
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.season-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.season-selector h2 {
+  color: #333;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.season-select {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  min-width: 150px;
+}
+
+.season-select:hover {
+  border-color: #999;
+}
+
+.season-select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-overflow-scrolling: touch;
+}
+
+.driver-standings-table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: fixed;
+}
+
+.driver-standings-table th,
+.driver-standings-table td {
+  padding: 12px 8px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+.driver-standings-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Column widths */
+.driver-standings-table th:nth-child(1),
+.driver-standings-table td:nth-child(1) {
+  width: 60px;
+}
+
+.driver-standings-table th:nth-child(2),
+.driver-standings-table td:nth-child(2) {
+  width: 150px;
+}
+
+.driver-standings-table th:nth-child(3),
+.driver-standings-table td:nth-child(3) {
+  width: 150px;
+}
+
+.driver-standings-table th:last-child,
+.driver-standings-table td:last-child {
+  width: 80px;
+}
+
+.driver-standings-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.driver-standings-table td:first-child {
+  font-weight: 600;
+  color: #666;
+}
+
+.driver-standings-table td:nth-child(2) {
+  text-align: left;
+  font-weight: 500;
+}
+
+.driver-standings-table td:nth-child(3) {
+  text-align: left;
+  color: #666;
+}
+
+.driver-standings-table td:last-child {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.dnf-cell {
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+.total-points {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Loading and error states */
+.loading,
+.error {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  width: 100%;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .driver-standings-container {
+    padding: 15px;
+  }
+
+  .season-selector {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .season-selector h2 {
+    font-size: 1.3rem;
+  }
+
+  .season-select {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .driver-standings-container {
+    padding: 10px;
+  }
+
+  .driver-standings-table {
+    font-size: 12px;
+  }
+
+  .driver-standings-table th,
+  .driver-standings-table td {
+    padding: 8px 4px;
+  }
+
+  .season-selector h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .driver-standings-container {
+    padding: 5px;
+  }
+
+  .driver-standings-table {
+    font-size: 11px;
+  }
+
+  .driver-standings-table th,
+  .driver-standings-table td {
+    padding: 6px 3px;
+  }
+
+  .season-selector h2 {
+    font-size: 1.1rem;
+  }
+} 

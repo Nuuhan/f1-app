@@ -1,0 +1,217 @@
+.race-visualizer {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--bg-color);
+}
+
+.race-visualizer h1 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.tool-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+.tool-button {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.tool-button:hover {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+}
+
+.tool-button.active {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+}
+
+.tool-content {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder-content {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    padding: 2rem;
+}
+
+.selection-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.select-group label {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.select-input {
+    padding: 0.5rem;
+    border: 2px solid var(--text-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.select-input option {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#year-select {
+    min-width: 150px;
+}
+
+#race-select {
+    min-width: 300px;
+}
+
+.select-input:focus {
+    outline: none;
+    border-color: #34495e;
+}
+
+.generate-button {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto 2rem;
+}
+
+.generate-button:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.generate-button:disabled {
+    background-color: var(--main-bg);
+    color: var(--text-color);
+    cursor: not-allowed;
+}
+
+.plot-container {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.plot-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.error-message {
+    color: #2c3e50;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: rgba(44, 62, 80, 0.1);
+    border-radius: 5px;
+}
+
+.save-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.save-button {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.save-button:hover:not(:disabled) {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.save-button:disabled {
+    background-color: var(--main-bg);
+    color: var(--text-color);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.save-status {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.save-status.success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.save-status.error {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+@media (max-width: 768px) {
+    .tool-buttons {
+        gap: 0.3rem;
+    }
+
+    .tool-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        min-width: 100px;
+    }
+} 
