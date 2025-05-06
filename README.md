@@ -66,6 +66,8 @@ The frontend uses the following main dependencies:
 2. Start the FastAPI server:
 ```bash
 uvicorn main:app --reload
+or
+python -m uvicorn f1-app.src.services.race_visualizer:app --reload
 ```
 
 ### Frontend
