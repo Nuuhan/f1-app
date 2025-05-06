@@ -35,61 +35,29 @@ class F1StatsCrawler:
         for row in rows:
             cols = row.find_all('td')
             if len(cols) >= 5:
-                position = cols[0].text.strip()
-                driver = cols[2].text.strip()
-                team = cols[3].text.strip()
-                points = cols[4].text.strip()
+                track = cols[0].text.strip()
+                position = cols[1].text.strip()
+                driver_number = cols[2].text.strip()
+                driver = cols[3].text.strip()
+                team = cols[4].text.strip()
+                starting_grid = cols[5].text.strip()
+                lap_count = cols[6].text.strip()
+                delta = cols[7].text.strip()
+                fastest_lap = cols[8].text.strip()
+                driver_fastest_lap = cols[9].text.strip()
                 standings.append({
+                    'Track': track,
                     'Position': position,
+                    'DriverNumber': driver_number,
                     'Driver': driver,
                     'Team': team,
-                    'Points': points
+                    'StartingGrid': starting_grid,
+                    'Lap': lap_count,
+                    'Delta': delta,
+                    'FastestLap': fastest_lap,
+                    'DriverFastestLap': driver_fastest_lap    
                 })
         return standings
-
-    def parse_constructor_standings(self, html):
-        soup = BeautifulSoup(html, 'html.parser')
-        standings = []
-        tables = soup.find_all('table', {'class': 'tableau'})
-        if not tables or len(tables) < 2:
-            return standings
-        table = tables[1]
-        rows = table.find_all('tr')[1:]
-        for row in rows:
-            cols = row.find_all('td')
-            if len(cols) >= 4:
-                position = cols[0].text.strip()
-                team = cols[2].text.strip()
-                points = cols[3].text.strip()
-                standings.append({
-                    'Position': position,
-                    'Team': team,
-                    'Points': points
-                })
-        return standings
-
-    def parse_race_results(self, html):
-        soup = BeautifulSoup(html, 'html.parser')
-        results = []
-        table = soup.find('table', {'class': 'tableau'})
-        if not table:
-            return results
-        for row in table.find_all('tr')[1:]:
-            cols = row.find_all('td')
-            if len(cols) >= 5:
-                position = cols[0].text.strip()
-                driver = cols[1].text.strip()
-                team = cols[2].text.strip()
-                time = cols[3].text.strip()
-                points = cols[4].text.strip()
-                results.append({
-                    'Position': position,
-                    'Driver': driver,
-                    'Team': team,
-                    'Time': time,
-                    'Points': points
-                })
-        return results
 
     def write_csv(self, data, filename, year):
         """Write data to CSV with the new naming convention"""
