@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# F1 Fantasy Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project consists of a Python backend for F1 data analysis and a React TypeScript frontend for visualization and interaction.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+```
+.
+├── f1-app/           # Frontend React TypeScript application
+├── requirements.txt  # Backend Python dependencies
+└── .ipynb_checkpoints/
+```
 
-### `npm start`
+## Backend Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Create a Python virtual environment (recommended):
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Install Python dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-### `npm test`
+The backend requires the following Python packages:
+- requests==2.31.0
+- pandas==2.1.4
+- beautifulsoup4==4.12.2
+- selenium==4.16.0
+- webdriver-manager==4.0.1
+- fastf1>=3.5.0
+- numpy>=1.21.0
+- scikit-learn>=1.0.0
+- matplotlib>=3.5.1
+- seaborn>=0.11.0
+- jupyter>=1.0.0
+- fastapi==0.68.1
+- uvicorn==0.15.0
+- python-multipart==0.0.5
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Frontend Setup
 
-### `npm run build`
+1. Navigate to the frontend directory:
+```bash
+cd f1-app
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install Node.js dependencies:
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The frontend uses the following main dependencies:
+- React 19.1.0
+- TypeScript 4.9.5
+- React Router DOM 7.5.0
+- PapaParse 5.5.2 (for CSV parsing)
+- Various testing libraries
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running the Application
 
-### `npm run eject`
+### Backend
+1. Make sure you're in the root directory
+2. Start the FastAPI server:
+```bash
+uvicorn main:app --reload
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Frontend
+1. Navigate to the frontend directory:
+```bash
+cd f1-app
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Start the development server:
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The frontend will be available at `http://localhost:3000`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Development
 
-## Learn More
+- Backend API documentation will be available at `http://localhost:8000/docs` when the server is running
+- Frontend development server includes hot-reloading
+- Use `npm run build` in the frontend directory to create a production build
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Notes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Make sure you have Python 3.8+ and Node.js 14+ installed
+- The backend uses FastAPI for the API server
+- The frontend is built with React and TypeScript
+- Both development servers need to be running simultaneously for full functionality 
